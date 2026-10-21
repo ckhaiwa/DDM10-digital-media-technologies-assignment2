@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Abdallah Law Firm</title>
+  <meta name="description" content="Contact Abdallah Law Firm – schedule a consultation, find our office in Port Louis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">A</div>
+        ABDALLAH <span>LAW</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="meet.html">Meet the Lawyer</a>
+        <a href="expertise.html">Expertise</a>
+        <a href="articles.html">Articles</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="contact.html" class="nav-cta">Schedule Consultation</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode">◐</button>
+        <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="meet.html">Meet the Lawyer</a>
+    <a href="expertise.html">Expertise</a>
+    <a href="articles.html">Articles</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta" style="text-align:center;">Schedule Consultation</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Schedule a confidential legal consultation. We respond promptly to all enquiries.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h2>Get in Touch</h2>
+          <p>Whether you need advice on a personal matter or a complex commercial dispute, we are here to help.</p>
+
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div>
+              <h4>Office Address</h4>
+              <p>1 Example Street<br>Port Louis, Mauritius</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:+23057995620">+230 5799 5620</a></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:abdallah@gmail.com">abdallah@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="map-box">
+            <iframe
+              src="https://maps.google.com/maps?q=Ebene+Cybercity,+Mauritius&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              title="Map of Ebene / Port Louis area"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <div class="form-card reveal">
+          <h2>Schedule a Consultation</h2>
+          <p>Fill in the form below and we will get back to you shortly.</p>
+
+          <div class="success-message" id="successMsg">
+            ✓ Thank you! Your message has been received. We will contact you soon.
+          </div>
+
+          <form id="contactForm" novalidate>
+            <div class="form-group" id="nameGroup">
+              <label for="fullName">Full Name <span class="req">*</span></label>
+              <input type="text" id="fullName" name="fullName" placeholder="Your full name" autocomplete="name">
+              <div class="error-msg">Please enter your full name (at least 2 characters).</div>
+            </div>
+
+            <div class="form-group" id="emailGroup">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+              <div class="error-msg">Please enter a valid email address.</div>
+            </div>
+
+            <div class="form-group" id="phoneGroup">
+              <label for="phone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+230 5XXX XXXX" autocomplete="tel">
+              <div class="error-msg">Please enter a valid phone number.</div>
+            </div>
+
+            <div class="form-group" id="practiceGroup">
+              <label for="practice">Practice Area <span class="req">*</span></label>
+              <select id="practice" name="practice">
+                <option value="">Select a practice area</option>
+                <option value="family">Family Law</option>
+                <option value="criminal">Criminal Law</option>
+                <option value="labour">Labour / Employment Law</option>
+                <option value="tenancy">Tenancy & Rental Law</option>
+                <option value="commercial">Commercial Law</option>
+                <option value="contractual">Contractual Disputes</option>
+                <option value="litigation">Litigation & Arbitration</option>
+                <option value="mediation">Mediation</option>
+                <option value="drafting">Contract Drafting</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="error-msg">Please select a practice area.</div>
+            </div>
+
+            <div class="form-group" id="messageGroup">
+              <label for="message">Message <span class="req">*</span></label>
+              <textarea id="message" name="message" placeholder="Briefly describe your matter..."></textarea>
+              <div class="error-msg">Please enter a message (at least 10 characters).</div>
+            </div>
+
+            <div class="checkbox-group" id="consentGroup">
+              <input type="checkbox" id="consent" name="consent">
+              <label for="consent">I consent to the firm contacting me regarding this enquiry. I understand that information provided does not create a solicitor-client relationship until formally engaged. <span class="req">*</span></label>
+            </div>
+            <div class="error-msg" id="consentError" style="display:none;color:var(--error);font-size:0.85rem;margin-top:-12px;margin-bottom:16px;">You must provide consent to proceed.</div>
+
+            <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><div class="logo-mark">A</div>ABDALLAH <span>LAW</span></a>
+          <p>Legal services with high professionalism and outstanding results.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="meet.html">Meet the Lawyer</a></li>
+            <li><a href="expertise.html">Expertise</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Practice Areas</h4>
+          <ul>
+            <li><a href="expertise.html">Family Law</a></li>
+            <li><a href="expertise.html">Criminal Law</a></li>
+            <li><a href="expertise.html">Commercial Law</a></li>
+            <li><a href="expertise.html">Litigation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li>📍 1 Example Street, Port Louis</li>
+            <li>📞 <a href="tel:+23057995620">+230 5799 5620</a></li>
+            <li>✉️ <a href="mailto:abdallah@gmail.com">abdallah@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="disclaimer">Disclaimer, this is a project website nothing is real!</p>
+        <p>© 2026 Chiraag Khaiwa & James Botte Ryan. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script>
+    const themeToggle = document.querySelector('.theme-toggle');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '☀' : '◐';
+    themeToggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      themeToggle.textContent = next === 'dark' ? '☀' : '◐';
+    });
+
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('open');
+    }));
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      const obs = new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) { el.classList.add('revealed'); obs.unobserve(el); }
+      }, { threshold: 0.15 });
+      obs.observe(el);
+    });
+
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('successMsg');
+
+    function showError(groupId, show) {
+      const group = document.getElementById(groupId);
+      if (show) group.classList.add('has-error');
+      else group.classList.remove('has-error');
+    }
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function validatePhone(phone) {
+      return /^[\d\s\+\-\(\)]{7,20}$/.test(phone.trim());
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const practice = document.getElementById('practice').value;
+      const message = document.getElementById('message').value.trim();
+      const consent = document.getElementById('consent').checked;
+
+      showError('nameGroup', name.length < 2);
+      if (name.length < 2) valid = false;
+
+      showError('emailGroup', !validateEmail(email));
+      if (!validateEmail(email)) valid = false;
+
+      showError('phoneGroup', !validatePhone(phone));
+      if (!validatePhone(phone)) valid = false;
+
+      showError('practiceGroup', !practice);
+      if (!practice) valid = false;
+
+      showError('messageGroup', message.length < 10);
+      if (message.length < 10) valid = false;
+
+      const consentError = document.getElementById('consentError');
+      if (!consent) {
+        consentError.style.display = 'block';
+        valid = false;
+      } else {
+        consentError.style.display = 'none';
+      }
+
+      if (valid) {
+        successMsg.classList.add('show');
+        form.reset();
+        document.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+        setTimeout(() => {
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    });
+
+    ['fullName', 'email', 'phone', 'practice', 'message'].forEach(id => {
+      document.getElementById(id).addEventListener('input', () => {
+        const groupMap = {
+          fullName: 'nameGroup',
+          email: 'emailGroup',
+          phone: 'phoneGroup',
+          practice: 'practiceGroup',
+          message: 'messageGroup'
+        };
+        showError(groupMap[id], false);
+      });
+    });
+    document.getElementById('consent').addEventListener('change', () => {
+      document.getElementById('consentError').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
