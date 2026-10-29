@@ -9,6 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- EmailJS SDK Script -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      // Initialize EmailJS with your Public Key
+      emailjs.init({
+        publicKey: "user_abdallah_law_public_key_98231"
+      });
+    })();
+  </script>
 </head>
 <body>
   <header class="header">
@@ -117,16 +128,16 @@
               <label for="practice">Practice Area <span class="req">*</span></label>
               <select id="practice" name="practice">
                 <option value="">Select a practice area</option>
-                <option value="family">Family Law</option>
-                <option value="criminal">Criminal Law</option>
-                <option value="labour">Labour / Employment Law</option>
-                <option value="tenancy">Tenancy & Rental Law</option>
-                <option value="commercial">Commercial Law</option>
-                <option value="contractual">Contractual Disputes</option>
-                <option value="litigation">Litigation & Arbitration</option>
-                <option value="mediation">Mediation</option>
-                <option value="drafting">Contract Drafting</option>
-                <option value="other">Other</option>
+                <option value="Family Law">Family Law</option>
+                <option value="Criminal Law">Criminal Law</option>
+                <option value="Labour / Employment Law">Labour / Employment Law</option>
+                <option value="Tenancy & Rental Law">Tenancy & Rental Law</option>
+                <option value="Commercial Law">Commercial Law</option>
+                <option value="Contractual Disputes">Contractual Disputes</option>
+                <option value="Litigation & Arbitration">Litigation & Arbitration</option>
+                <option value="Mediation">Mediation</option>
+                <option value="Contract Drafting">Contract Drafting</option>
+                <option value="Other">Other</option>
               </select>
               <div class="error-msg">Please select a practice area.</div>
             </div>
@@ -233,6 +244,7 @@
 
     const form = document.getElementById('contactForm');
     const successMsg = document.getElementById('successMsg');
+    const submitBtn = document.getElementById('submitBtn');
 
     function showError(groupId, show) {
       const group = document.getElementById(groupId);
@@ -283,12 +295,34 @@
       }
 
       if (valid) {
-        successMsg.classList.add('show');
-        form.reset();
-        document.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
-        setTimeout(() => {
-          successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 100);
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending Message...';
+
+        const templateParams = {
+          fullName: name,
+          email: email,
+          phone: phone,
+          practice: practice,
+          message: message
+        };
+
+        // Standard service and template identifiers
+        emailjs.send("service_abdallah_law", "template_consultation", templateParams)
+          .then(() => {
+            successMsg.classList.add('show');
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            document.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+            setTimeout(() => {
+              successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+          }, (error) => {
+            alert('Failed to send message. Please try calling us directly.');
+            console.error('Email sending failed:', error);
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+          });
       }
     });
 
